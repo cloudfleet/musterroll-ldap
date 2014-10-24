@@ -1,6 +1,6 @@
 {
   "name": "musterroll-ldap",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Readonly LDAP module for musterroll, a lightweight user management framework",
   "main": "index.js",
   "scripts": {
