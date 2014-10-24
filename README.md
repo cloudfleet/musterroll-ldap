@@ -45,11 +45,22 @@ Then you can use the LDAP server as follows:
     });
 
 
-If you want to be able to manage users you should also add the api module:
+If you want to be able to manage users you should also add the [api module][api-module]:
+
+    {
+      ...
+      "dependencies": {
+        "musterroll-api": "git://github.com/cloudfleet/musterroll-api.git",
+        ...
+      }
+    }
+
+And in the server code:
 
     var webServer = musterroll_api.createServer({
         userStore: userStore,
-        /* This initializer creates an Administrator on the first sign in attempt with the credentials given */
+        /* This initializer creates an Administrator on the
+        first sign in attempt with the credentials given */
         user_store_initializer: function(username, password, userStore, callback, error_callback) {
             var user = {
                 "id":username,
@@ -65,3 +76,4 @@ If you want to be able to manage users you should also add the api module:
 
 
 [json-userstore]: https://github.com/cloudfleet/musterroll-userstore-json
+[api-module]: https://github.com/cloudfleet/musterroll-api
