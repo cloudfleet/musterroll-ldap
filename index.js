@@ -34,7 +34,7 @@ var SimpleLdapServer = function(options)
 
     server.search(rootDN, function(req, res, next) {
         console.log("scope "+req.scope+", filter "+req.filter+", baseObject "+req.baseObject);
-        ldapHandler.handleSearch();
+        ldapHandler.handleSearch(req, res);
         res.end();
         return next();
     });
