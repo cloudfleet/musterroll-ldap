@@ -20,6 +20,7 @@
   "dependencies": {
     "ldapjs": "^0.7.0",
     "lodash": "^2.4.1",
-    "bunyan": "^0.22.1"
+    "bunyan": "^0.22.1",
+    "musterroll-userstore-json": "git://github.com/cloudfleet/musterroll-userstore-json.git"
   }
 }
