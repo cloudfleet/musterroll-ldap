@@ -6,6 +6,7 @@ var SimpleLdapServer = function(options)
 {
     var rootDN = options["rootDN"] || 'dc=users, dc=example, dc=com';
     var userStore = options["userStore"];
+    var domain = options["domain"];
 
     var ldapHandler = options["ldap_handler"] || ldap_handler.createHandler(
         {
