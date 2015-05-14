@@ -10,7 +10,8 @@ var SimpleLdapServer = function(options)
     var ldapHandler = options["ldap_handler"] || ldap_handler.createHandler(
         {
             userStore: userStore,
-            rootDN: rootDN
+            rootDN: rootDN,
+            domain: domain
         }
     );
 
