@@ -21,7 +21,7 @@ var SimpleLdapServer = function(options)
     server.log = log;
 
 
-    server.bind('ou=Users,'+rootDN, function(req, res, next) {
+    server.bind('ou=users,'+rootDN, function(req, res, next) {
         var password = req.credentials;
         var username = req.dn.rdns[0].cn;
 
