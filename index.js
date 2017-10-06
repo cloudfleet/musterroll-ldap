@@ -22,6 +22,7 @@ var SimpleLdapServer = function(options)
 
 
     server.bind('ou=users,'+rootDN, function(req, res, next) {
+        console.log('binding ' + req.dn.rdns[0].cn);
         var password = req.credentials;
         var username = req.dn.rdns[0].cn;
 
@@ -35,8 +36,9 @@ var SimpleLdapServer = function(options)
 
 
     server.search(rootDN, function(req, res, next) {
-        console.log("scope "+req.scope+", filter "+req.filter+", baseObject "+req.baseObject);
+        console.log("scope "+req.scope+", filter "+req.filter+", baseObject "+req.baseObject+", controls "+JSON.stringify(req.controls));
         ldapHandler.handleSearch(req, res);
+        res.controls = req.controls;
         res.end();
         return next();
     });
